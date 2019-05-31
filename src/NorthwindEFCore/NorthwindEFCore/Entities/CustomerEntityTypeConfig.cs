@@ -19,6 +19,7 @@ namespace ODataCoreExample.Db.Entities
             builder.Property(m => m.Id).HasColumnName("CustomerID").HasMaxLength(5).IsRequired();
 
             //	"CompanyName" nvarchar(40) NOT NULL,
+            // CREATE  INDEX "CompanyName" ON "dbo"."Customers"("CompanyName")
             builder.Property(m => m.CompanyName).HasMaxLength(40).IsRequired();
             builder.HasIndex("CompanyName").HasName("CompanyName");
 
@@ -30,16 +31,19 @@ namespace ODataCoreExample.Db.Entities
             
             //	"Address" nvarchar(60) NULL ,
             builder.Property(m => m.Address).HasMaxLength(60);
-            
+
             //	"City" nvarchar(15) NULL ,
+            // CREATE  INDEX "City" ON "dbo"."Customers"("City")
             builder.Property(m => m.City).HasMaxLength(15);
             builder.HasIndex("City").HasName("City");
 
             //	"Region" nvarchar(15) NULL ,
+            // CREATE  INDEX "Region" ON "dbo"."Customers"("Region")
             builder.Property(m => m.Region).HasMaxLength(15);
             builder.HasIndex("Region").HasName("Region");
 
             //	"PostalCode" nvarchar(10) NULL ,
+            // CREATE  INDEX "PostalCode" ON "dbo"."Customers"("PostalCode")
             builder.Property(m => m.PostalCode).HasMaxLength(10);
             builder.HasIndex("PostalCode").HasName("PostalCode");
 
@@ -51,17 +55,6 @@ namespace ODataCoreExample.Db.Entities
 
             //	"Fax" nvarchar(24) NULL ,
             builder.Property(m => m.Fax).HasMaxLength(24);
-
-            //)
-            //GO
-            // CREATE  INDEX "City" ON "dbo"."Customers"("City")
-            //GO
-            // CREATE  INDEX "CompanyName" ON "dbo"."Customers"("CompanyName")
-            //GO
-            // CREATE  INDEX "PostalCode" ON "dbo"."Customers"("PostalCode")
-            //GO
-            // CREATE  INDEX "Region" ON "dbo"."Customers"("Region")
-            //GO
 
             //builder.HasData();
         }
