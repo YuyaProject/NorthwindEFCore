@@ -1,14 +1,14 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using ODataCoreExample.Db.Entities;
+using NorthwindEFCore.Entities;
 
-namespace ODataCoreExample.Db.TypeConfigurations
+namespace NorthwindEFCore.TypeConfigurations
 {
 	public class TerritoryEntityTypeConfig : IEntityTypeConfiguration<Territory>
 	{
 		public void Configure(EntityTypeBuilder<Territory> builder)
 		{
-			//CREATE TABLE [dbo].[Territories] 
+			//CREATE TABLE [dbo].[Territories]
 			builder.ToTable("Territories");
 
 			//	([TerritoryID] [nvarchar] (20) NOT NULL ,
@@ -21,7 +21,7 @@ namespace ODataCoreExample.Db.TypeConfigurations
 			//[RegionID] [int] NOT NULL
 			builder.Property(m => m.RegionId).HasColumnName("RegionID").IsRequired();
 			builder.HasOne(m => m.Region)
-				.WithMany(m=>m.Territories)
+				.WithMany(m => m.Territories)
 				.HasForeignKey(m => m.RegionId)
 				.IsRequired();
 

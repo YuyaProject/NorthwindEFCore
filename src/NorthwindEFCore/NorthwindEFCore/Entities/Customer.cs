@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace ODataCoreExample.Db.Entities
+namespace NorthwindEFCore.Entities
 {
 	public class Customer : Entity<string>
 	{

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace ODataCoreExample.Db.Entities
+namespace NorthwindEFCore.Entities
 {
 	public abstract class Entity<TKey> : IEntity
 	{

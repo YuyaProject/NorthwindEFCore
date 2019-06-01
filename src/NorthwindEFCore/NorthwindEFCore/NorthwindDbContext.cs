@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using ODataCoreExample.Db.Entities;
+using NorthwindEFCore.Entities;
 
 namespace NorthwindEFCore
 {

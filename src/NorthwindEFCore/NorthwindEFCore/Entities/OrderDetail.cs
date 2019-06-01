@@ -1,4 +1,4 @@
-﻿namespace ODataCoreExample.Db.Entities
+﻿namespace NorthwindEFCore.Entities
 {
 	public class OrderDetail : IEntity
 	{

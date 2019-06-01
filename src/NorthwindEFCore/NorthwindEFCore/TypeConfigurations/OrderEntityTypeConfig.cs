@@ -1,10 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using ODataCoreExample.Db.Entities;
+using NorthwindEFCore.Entities;
 using System;
 using System.Globalization;
 
-namespace ODataCoreExample.Db.TypeConfigurations
+namespace NorthwindEFCore.TypeConfigurations
 {
 	public class OrderEntityTypeConfig : IEntityTypeConfiguration<Order>
 	{

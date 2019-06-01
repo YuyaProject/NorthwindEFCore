@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using ODataCoreExample.Db.Entities;
+using NorthwindEFCore.Entities;
 
-namespace ODataCoreExample.Db.TypeConfigurations
+namespace NorthwindEFCore.TypeConfigurations
 {
 	public class ProductEntityTypeConfig : IEntityTypeConfiguration<Product>
 	{

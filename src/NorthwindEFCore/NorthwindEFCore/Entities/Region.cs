@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace ODataCoreExample.Db.Entities
+namespace NorthwindEFCore.Entities
 {
 	public class Region : Entity<int>
 	{
