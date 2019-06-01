@@ -1,10 +1,8 @@
 ﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ODataCoreExample.Db.Entities
 {
-	public class Customer : Entity<string>
+	public class Supplier : Entity<int>
 	{
 		public virtual string CompanyName { get; set; }
 
@@ -25,7 +23,9 @@ namespace ODataCoreExample.Db.Entities
 		public virtual string Phone { get; set; }
 
 		public virtual string Fax { get; set; }
-		public virtual List<Order> Orders { get; set; } = new List<Order>();
 
+		public virtual string HomePage { get; set; }
+
+		public virtual List<Product> Products { get; set; }
 	}
 }

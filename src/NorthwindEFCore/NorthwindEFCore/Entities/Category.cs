@@ -1,11 +1,15 @@
-﻿namespace ODataCoreExample.Db.Entities
+﻿using System.Collections.Generic;
+
+namespace ODataCoreExample.Db.Entities
 {
-    public class Category : Entity<int>
-    {
-        public string CategoryName { get; set; }
+	public class Category : Entity<int>
+	{
+		public virtual string CategoryName { get; set; }
 
-        public string Description { get; set; }
+		public virtual string Description { get; set; }
 
-        public byte[] Picture { get; set; }
-    }
+		public virtual byte[] Picture { get; set; }
+
+		public virtual List<Product> Products { get; set; } = new List<Product>();
+	}
 }

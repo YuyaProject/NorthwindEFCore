@@ -2,11 +2,10 @@
 
 namespace ODataCoreExample.Db.Entities
 {
-    public abstract class Entity<TKey>
-    {
-        [Key]
-        [Required]
-        public virtual TKey Id { get; set; }
-
-    }
+	public abstract class Entity<TKey> : IEntity
+	{
+		[Key]
+		[Required]
+		public virtual TKey Id { get; set; }
+	}
 }
