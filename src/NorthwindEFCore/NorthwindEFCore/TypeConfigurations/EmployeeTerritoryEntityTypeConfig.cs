@@ -8,7 +8,7 @@ namespace NorthwindEFCore.TypeConfigurations
 	{
 		public void Configure(EntityTypeBuilder<EmployeeTerritory> builder)
 		{
-			//CREATE TABLE [dbo].[EmployeeTerritories] 
+			//CREATE TABLE [dbo].[EmployeeTerritories]
 			builder.ToTable("EmployeeTerritories");
 
 			//	([EmployeeID] [int] NOT NULL,
@@ -19,7 +19,7 @@ namespace NorthwindEFCore.TypeConfigurations
 			builder.Property(m => m.TerritoryId).HasColumnName("TerritoryID").IsRequired();
 
 			builder.HasOne(m => m.Employee)
-				.WithMany(m=> m.EmployeeTerritories)
+				.WithMany(m => m.EmployeeTerritories)
 				.HasForeignKey(m => m.EmployeeId)
 				.IsRequired();
 

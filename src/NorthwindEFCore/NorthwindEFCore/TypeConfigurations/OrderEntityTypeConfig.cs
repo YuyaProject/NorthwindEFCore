@@ -30,7 +30,7 @@ namespace NorthwindEFCore.TypeConfigurations
 			//),
 			builder.Property(m => m.CustomerId).HasColumnName("CustomerID").HasColumnType("char(5)").HasMaxLength(5);
 			builder.HasOne(m => m.Customer)
-				.WithMany(m=>m.Orders)
+				.WithMany(m => m.Orders)
 				.HasForeignKey(m => m.CustomerId)
 				.HasConstraintName("FK_Orders_Customers");
 			builder.HasIndex(m => m.CustomerId).HasName("CustomerID");
@@ -38,7 +38,7 @@ namespace NorthwindEFCore.TypeConfigurations
 			//"EmployeeID" "int" NULL ,
 			builder.Property(m => m.EmployeeId).HasColumnName("EmployeeID");
 			builder.HasOne(m => m.Employee)
-				.WithMany(m=>m.Orders)
+				.WithMany(m => m.Orders)
 				.HasForeignKey(m => m.EmployeeId)
 				.HasConstraintName("FK_Orders_Employees");
 			builder.HasIndex(m => m.EmployeeId).HasName("EmployeeID");
@@ -63,7 +63,7 @@ namespace NorthwindEFCore.TypeConfigurations
 			//)
 			builder.Property(m => m.ShipViaId).HasColumnName("ShipVia");
 			builder.HasOne(m => m.ShipVia)
-				.WithMany(m=>m.Orders)
+				.WithMany(m => m.Orders)
 				.HasForeignKey(m => m.ShipViaId)
 				.HasConstraintName("FK_Orders_Shippers");
 			builder.HasIndex(m => m.ShipViaId).HasName("ShippersOrders");
@@ -89,7 +89,6 @@ namespace NorthwindEFCore.TypeConfigurations
 
 			//"ShipCountry" nvarchar(15) NULL ,
 			builder.Property(m => m.ShipCountry).HasMaxLength(15);
-
 
 			builder.HasData(
 new Order() { Id = 10248, CustomerId = "VINET", EmployeeId = 5, OrderDate = DateTimeParse("7/4/1996"), RequiredDate = DateTimeParse("8/1/1996"), ShippedDate = DateTimeParse("7/16/1996"), ShipViaId = 3, Freight = 32.38, ShipName = "Vins et alcools Chevalier", ShipAddress = "59 rue de l'Abbaye", ShipCity = "Reims", ShipRegion = null, ShipPostalCode = "51100", ShipCountry = "France" },
@@ -926,6 +925,7 @@ new Order() { Id = 11077, CustomerId = "RATTC", EmployeeId = 1, OrderDate = Date
 		}
 
 		private static readonly CultureInfo ciEN = new CultureInfo("en-US");
+
 		private static DateTime? DateTimeParse(string str)
 		{
 			if (string.IsNullOrWhiteSpace(str)) return null;

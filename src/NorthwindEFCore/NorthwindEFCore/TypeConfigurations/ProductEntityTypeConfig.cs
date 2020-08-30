@@ -32,7 +32,7 @@ namespace NorthwindEFCore.TypeConfigurations
 			//	"SupplierID"
 			//),
 			builder.HasOne(m => m.Supplier)
-				.WithMany(m=>m.Products)
+				.WithMany(m => m.Products)
 				.HasForeignKey(m => m.SupplierId)
 				.HasConstraintName("FK_Orders_Suppliers");
 			builder.HasIndex(m => m.SupplierId).HasName("SuppliersProducts");
@@ -45,7 +45,7 @@ namespace NorthwindEFCore.TypeConfigurations
 			//	"CategoryID"
 			//),
 			builder.HasOne(m => m.Category)
-				.WithMany(m=>m.Products)
+				.WithMany(m => m.Products)
 				.HasForeignKey(m => m.CategoryId)
 				.HasConstraintName("FK_Orders_Categories");
 
@@ -69,7 +69,6 @@ namespace NorthwindEFCore.TypeConfigurations
 
 			//"Discontinued" "bit" NOT NULL CONSTRAINT "DF_Products_Discontinued" DEFAULT(0),
 			builder.Property(m => m.Discontinued).HasDefaultValue(false);
-
 
 			builder.HasData(
 				new Product() { Id = 1, ProductName = "Chai", SupplierId = 1, CategoryId = 1, QuantityPerUnit = "10 boxes x 20 bags", UnitPrice = 18, UnitsInStock = 39, UnitsOnOrder = 0, ReorderLevel = 10, Discontinued = false },

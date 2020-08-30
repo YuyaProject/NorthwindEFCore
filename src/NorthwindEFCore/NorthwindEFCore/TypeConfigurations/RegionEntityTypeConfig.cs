@@ -15,9 +15,8 @@ namespace NorthwindEFCore.TypeConfigurations
 			builder.HasKey(m => m.Id).HasName("RegionID");
 			builder.Property(m => m.Id).HasColumnName("RegionID").IsRequired();
 
-			//	[RegionDescription] [nchar] (50) NOT NULL 
+			//	[RegionDescription] [nchar] (50) NOT NULL
 			builder.Property(m => m.RegionDescription).HasMaxLength(50).IsRequired();
-
 
 			builder.HasData(
 				new Region() { Id = 1, RegionDescription = "Eastern" },

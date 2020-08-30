@@ -11,7 +11,5 @@
 		public virtual double UnitPrice { get; set; } = 0.0;
 		public virtual short Quantity { get; set; } = 1;
 		public virtual float Discount { get; set; } = 0.0f;
-
 	}
-
 }

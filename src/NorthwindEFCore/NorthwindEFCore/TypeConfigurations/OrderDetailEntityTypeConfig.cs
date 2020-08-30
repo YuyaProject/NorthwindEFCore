@@ -40,7 +40,6 @@ namespace NorthwindEFCore.TypeConfigurations
 			builder.Property(m => m.Quantity).HasDefaultValue((short)1).IsRequired();
 			builder.Property(m => m.Discount).HasDefaultValue(0.0f).IsRequired();
 
-
 			builder.HasData(
 	new OrderDetail() { OrderId = 10248, ProductId = 11, UnitPrice = 14, Quantity = 12, Discount = 0f },
 new OrderDetail() { OrderId = 10248, ProductId = 42, UnitPrice = 9.8, Quantity = 10, Discount = 0f },
@@ -2197,7 +2196,6 @@ new OrderDetail() { OrderId = 11077, ProductId = 66, UnitPrice = 17, Quantity = 
 new OrderDetail() { OrderId = 11077, ProductId = 73, UnitPrice = 15, Quantity = 2, Discount = 0.01f },
 new OrderDetail() { OrderId = 11077, ProductId = 75, UnitPrice = 7.75, Quantity = 4, Discount = 0f },
 new OrderDetail() { OrderId = 11077, ProductId = 77, UnitPrice = 13, Quantity = 2, Discount = 0f }
-
 
 				);
 		}

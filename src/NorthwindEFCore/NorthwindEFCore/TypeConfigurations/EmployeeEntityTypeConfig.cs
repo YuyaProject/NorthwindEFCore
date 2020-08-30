@@ -80,7 +80,7 @@ namespace NorthwindEFCore.TypeConfigurations
 			builder.Property(m => m.ReportsToId).HasColumnName("ReportsTo");
 
 			builder.HasOne(m => m.ReportsTo)
-				.WithMany(m=>m.Employees)
+				.WithMany(m => m.Employees)
 				.HasForeignKey(m => m.ReportsToId)
 				.HasConstraintName("FK_Employees_Employees");
 
