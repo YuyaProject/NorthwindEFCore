@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>netcoreapp2.2</TargetFramework>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Include="..\NorthwindEFCore.ConsoleDemo\**\*.cs" />
+	</ItemGroup>
+	
+	<ItemGroup>
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="2.2.6" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="2.2.6" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\NorthwindEFCore.V2_2\NorthwindEFCore.V2_2.csproj" />
+	</ItemGroup>
+
+</Project>

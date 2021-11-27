@@ -15,6 +15,11 @@ namespace NorthwindEFCore.ConsoleDemo
 			using (var northwindDbContext = new NorthwindDbContext(config.Options))
 			{
 				var categories = northwindDbContext.Categories.ToList();
+
+				foreach (var category in categories)
+                {
+                    Console.WriteLine($"{category.Id} - {category.CategoryName}");
+                }
 			}
 		}
 	}

@@ -4,29 +4,29 @@ using NorthwindEFCore.Entities;
 
 namespace NorthwindEFCore.TypeConfigurations
 {
-	public class TerritoryEntityTypeConfig : IEntityTypeConfiguration<Territory>
-	{
-		public void Configure(EntityTypeBuilder<Territory> builder)
-		{
-			//CREATE TABLE [dbo].[Territories]
-			builder.ToTable("Territories");
+    public class TerritoryEntityTypeConfig : IEntityTypeConfiguration<Territory>
+    {
+        public void Configure(EntityTypeBuilder<Territory> builder)
+        {
+            //CREATE TABLE [dbo].[Territories]
+            builder.ToTable("Territories");
 
-			//	([TerritoryID] [nvarchar] (20) NOT NULL ,
-			builder.HasKey(m => m.Id).HasName("TerritoryID");
-			builder.Property(m => m.Id).HasColumnName("TerritoryID").HasMaxLength(20).IsRequired();
+            //	([TerritoryID] [nvarchar] (20) NOT NULL ,
+            builder.HasKey(m => m.Id).HasName("TerritoryID");
+            builder.Property(m => m.Id).HasColumnName("TerritoryID").HasMaxLength(20).IsRequired();
 
-			//	[TerritoryDescription] [nchar] (50) NOT NULL ,
-			builder.Property(m => m.TerritoryDescription).HasMaxLength(50).IsRequired();
+            //	[TerritoryDescription] [nchar] (50) NOT NULL ,
+            builder.Property(m => m.TerritoryDescription).HasMaxLength(50).IsRequired();
 
-			//[RegionID] [int] NOT NULL
-			builder.Property(m => m.RegionId).HasColumnName("RegionID").IsRequired();
-			builder.HasOne(m => m.Region)
-				.WithMany(m => m.Territories)
-				.HasForeignKey(m => m.RegionId)
-				.IsRequired();
+            //[RegionID] [int] NOT NULL
+            builder.Property(m => m.RegionId).HasColumnName("RegionID").IsRequired();
+            builder.HasOne(m => m.Region)
+                .WithMany(m => m.Territories)
+                .HasForeignKey(m => m.RegionId)
+                .IsRequired();
 
-			builder.HasData(
-				new Territory() { Id = "01581", TerritoryDescription = "Westboro", RegionId = 1 },
+            builder.HasData(
+                new Territory() { Id = "01581", TerritoryDescription = "Westboro", RegionId = 1 },
 new Territory() { Id = "01730", TerritoryDescription = "Bedford", RegionId = 1 },
 new Territory() { Id = "01833", TerritoryDescription = "Georgetow", RegionId = 1 },
 new Territory() { Id = "02116", TerritoryDescription = "Boston", RegionId = 1 },
@@ -79,7 +79,7 @@ new Territory() { Id = "95060", TerritoryDescription = "Santa Cruz", RegionId = 
 new Territory() { Id = "98004", TerritoryDescription = "Bellevue", RegionId = 2 },
 new Territory() { Id = "98052", TerritoryDescription = "Redmond", RegionId = 2 },
 new Territory() { Id = "98104", TerritoryDescription = "Seattle", RegionId = 2 }
-				);
-		}
-	}
+                );
+        }
+    }
 }

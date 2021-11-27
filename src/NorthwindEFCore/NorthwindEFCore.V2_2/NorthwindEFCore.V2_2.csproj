@@ -1,0 +1,47 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>netstandard2.0;netstandard2.1;</TargetFrameworks>
+		<Authors>Alper Konuralp</Authors>
+		<Company>Doğuş Teknoloji</Company>
+		<Description>Northwind Example Database with EntityFramework Core and Sqlite</Description>
+		<Copyright>Alper Konuralp</Copyright>
+		<PackageProjectUrl>https://github.com/YuyaProject/NorthwindEFCore</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/YuyaProject/NorthwindEFCore</RepositoryUrl>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<AssemblyVersion>1.0.5.0</AssemblyVersion>
+		<FileVersion>1.0.5.0</FileVersion>
+		<Version>1.0.5</Version>
+		<RootNamespace>NorthwindEFCore</RootNamespace>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Include="..\NorthwindEFCore\**\*.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Remove="NorthwindDB.sqlite" />
+		<None Remove="sqlite-script.sql" />
+	</ItemGroup>
+  
+	<ItemGroup>
+		<Content Include="NorthwindDB.sqlite">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+		<Content Include="sqlite-script.sql">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.6" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="2.2.6" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="2.2.6" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite.Design" Version="1.1.6" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.2.6">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
+
+</Project>
